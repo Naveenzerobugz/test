@@ -1,0 +1,120 @@
+option:empty{ display:none;}
+.twitter-typeahead, .tt-hint, .tt-input, .tt-menu{ width: 100%; }
+.tt-open {
+    padding: 5px !important;
+    background-color: #dcf4ff !important;
+}
+.cust-tab > .table td {
+    background: #fff !important;
+    padding: 0rem !important;
+    vertical-align: middle !important; 
+    border: 1px solid #b4b4b4 !important;
+}
+.cust-tab > .table-bordered {
+    border: 0.01rem solid #b4b4b4 !important;
+}
+#gvpurchaselist td {    
+    /* border-right: 0.01rem solid #b4b4b4 !important; */
+    border-left: 0.01rem solid #b4b4b4 !important;
+}
+#gvpurchaselist th {    
+    /* border-right: 0.01rem solid #b4b4b4 !important; */
+    /* border-left: 0.01rem solid #b4b4b4 !important; */
+    border: 0.01rem solid #b3b3b4 !important;
+    border-right: 0.05rem solid #b3b3b4 !important;
+    border-left: none !important;
+}
+#gvpurchaselist > th > .bor-left{
+    border-left: 0.03rem solid #b3b3b4 !important;
+    border-bottom: 0.05rem solid #b3b3b4 !important;
+    border-top: 0.05rem solid #b3b3b4 !important;
+}
+#gvpurchaselist {
+    border: 0.01rem solid #b4b4b4 !important;
+}
+#gvpurchaselist td{
+    /* border-top: 0.01rem solid #b4b4b4 !important; */
+    border-bottom: 0.01rem solid #b4b4b4 !important;
+}
+th {
+    background: #e9e9e9 !important;
+    border: 0.05rem solid #b3b3b4 !important;
+}
+/* .form-control{
+    /* border: 1px solid rgba(34, 36, 38, 0) !important; */
+    /* border: 1px solid rgba(34, 36, 38, 0.12) !important;
+    border-radius: 0px !important; 
+} */
+.bootstrap-select > .dropdown-toggle.btn-light{
+    border-color: #e2e5ec00 !important;
+}
+.bg-white{
+    background-color: #fff !important;
+    background-clip: unset !important;
+}
+.tt-open > .tt-dataset > .tt-selectable{
+    border-bottom: 0.5px #ccc solid !important;
+    padding: 2px 0px 2px 0px !important;
+}
+.tt-open > .tt-dataset > .tt-selectable:last-child{
+    border-bottom: none !important;
+}
+
+.tt-open > .tt-dataset > .tt-selectable:first-child{
+    border-bottom: 0.5px solid grey !important;
+}
+
+/* Icon Btn Clr & Hover Clr  */
+.btn-outline-edit{
+    color: #fff !important;
+    background-color: #5867dd !important;
+    border-color: #5867dd !important;
+}
+.ic-white{
+    color: #fff !important;
+}
+.btn-outline-delete{
+    color: #fff !important;
+    background-color: #fd27eb !important;
+    border-color: #fd27eb !important;
+}
+/* End */
+
+.ptb-10{
+    padding: 10px 0px;
+}
+.ptb-5{
+    padding: 5px 0px;
+}
+.kt-badge--cancel{
+    color: #ffffff;
+    background-color: #ff4d6b;
+}
+.kt-badge--green{
+    color: #fff;
+    background-color: #38ce3c;
+}
+/* Green Button with Hover */
+.btn-success-grn{
+    background-color: #5AB412;
+    border-color: #5AB412;
+    color: #fff;
+}
+.btn-success-grn:hover{
+    background-color: rgb(251, 251, 251);
+    border-color: #5AB412;
+    color: #5AB412;
+}
+.btn-delete-red{
+    color: #fff !important;
+    background-color: #fd3737;
+    border-color: #bb2f22;
+}
+.btn-delete-red:hover{
+    color: #fff !important;
+    background-color: #f52310;
+    border-color: #c63224;
+}
+.input-no-border {
+    border: 1px solid #ffffff !important;
+}

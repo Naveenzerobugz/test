@@ -1,0 +1,518 @@
+<div class="kt-portlet kt-portlet--tabs">
+    <div class="kt-portlet__head">
+        <div class="kt-portlet__head-toolbar">
+            <ul class="nav nav-tabs nav-tabs-line nav-tabs-line-danger" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" data-toggle="tab" href="#kt_portlet_base_demo_1_1_tab_content" role="tab" aria-selected="true">
+                        <i class="la flaticon-tool"></i> Product
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#kt_portlet_base_demo_1_2_tab_content" role="tab" aria-selected="false">
+                        <i class="la la-briefcase"></i> Category
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#kt_portlet_base_demo_1_3_tab_content" role="tab" aria-selected="false">
+                        <i class="la flaticon-map"></i>Sub Category
+
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#kt_portlet_base_demo_1_4_tab_content" role="tab" aria-selected="false">
+                        <i class="la la-bell-o"></i>Attributes
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="kt-portlet__body">
+        <div class="tab-content">
+            <div class="tab-pane active" id="kt_portlet_base_demo_1_1_tab_content" role="tabpanel">
+                <div class="kt-portlet entry" style="margin-top:-20px">
+                    <div class="kt-portlet__head">
+                        <div class="kt-portlet__head-label">
+                            <h3 class="kt-portlet__head-title">
+                                Product Entry
+                            </h3>
+                        </div>
+                    </div>
+                    <!-- <form class="kt-form kt-form--label-right"> -->
+                    <div class="kt-portlet__body">
+                        <!--begin::Form-->
+                        <form class="kt-form kt-form--label-right" id="kt_form_3">
+                            <div class="row">
+
+                                <div class="col-lg-3">
+                                    <div class="form-group">
+                                        <label for="txtemployeename" class="form-control-label">Name</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend"><span class="input-group-text"><i
+                                                        class="fab fa-product-hunt"></i></span></div>
+                                            <input type="text" autocomplete="off" placeholder="Enter productname" class="form-control form-control-sm" name="productname" id="txtproductname">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3">
+                                    <div class="form-group">
+                                        <label class="form-control-label">Item code:</label>
+                                        <!-- <div class="col-lg-6"> -->
+                                        <input type="text" class="form-control form-control-sm" name="itemcode" id="txtitemcode" placeholder="Enter Item code">
+                                        <!-- </div> -->
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3">
+                                    <div class="form-group">
+                                        <label for="ddlunit" class="form-control-label">Unit</label>
+                                        <select id="ddlunit" name="unit" class="form-control form-control-sm">
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3">
+                                    <div class="form-group">
+                                        <label>Type</label>
+                                        <div class="kt-radio-inline">
+                                            <label class="kt-radio kt-radio--bold kt-radio--success">
+                                                <input type="radio" name="radio2" value="goods" checked> Goods
+                                                <span></span>
+                                            </label>
+                                            <label class="kt-radio kt-radio--bold kt-radio--danger">
+                                                <input type="radio" name="radio2" value="service"> Service
+                                                <span></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <!--begin::Section-->
+                                    <div class="kt-section">
+                                        <div class="kt-section__content kt-section__content--border kt-section__content--fit">
+                                            <!-- <ul class="kt-nav">
+                                                <li class="kt-nav__item">
+                                                    <a href="#" class="kt-nav__link">
+                                                        <span class="kt-nav__link-text"></span>
+                                                        Tax Inclusive<span class="kt-nav__link-badge">
+                                                            <span class="kt-switch kt-switch--sm kt-switch--icon"><label>
+                                                                <input type="checkbox" id="chbxtaxinclusive" checked="checked" name="">
+                                                                <span></span>
+                                                                </label></span>
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                               
+                                            </ul> -->
+                                            <ul class="kt-nav">
+                                            </ul>
+                                            <div class="form-group row">
+                                                <label class="col-lg-3 col-form-label">Sales Price:</label>
+                                                <div class="col-lg-6">
+                                                    <input type="text" name="saleprice" id="txtsaleprice" class="form-control decimal form-control-sm" placeholder="Enter Sales Price">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-3 col-form-label">Purchase Price:</label>
+                                                <div class="col-lg-6">
+                                                    <input type="text" class="form-control decimal form-control-sm" name="purchaseprice" id="txtpurchaseprice" placeholder="Enter Purchase Price">
+
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label class="col-lg-3 col-form-label">MRP:</label>
+                                                <div class="col-lg-6">
+                                                    <input type="text" class="form-control decimal form-control-sm" id="txtmrp" name="mrp" placeholder="Enter MRP">
+
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-3 col-form-label">Tax:</label>
+                                                <div class="col-lg-6">
+                                                    <select id="ddltax" name="tax" class="form-control form-control-sm">
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="kt-section">
+                                        <div class="kt-section__content kt-section__content--border kt-section__content--fit">
+                                            <ul class="kt-nav">
+                                            </ul>
+
+                                            <div class="form-group row">
+                                                <label class="col-lg-3 col-form-label">HSN/SAC code:</label>
+                                                <div class="col-lg-6">
+                                                    <input type="text" name="hsn_sac_code" id="txthsn_sac_code" class="form-control form-control-sm" placeholder="Enter HSN/SAC code">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label class="col-lg-3 col-form-label">Categories:</label>
+                                                <div class="col-lg-6">
+                                                    <select id="ddlcategories" name="categories" onchange="bindsubcategory()" class="form-control form-control-sm">
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-3 col-form-label">SubCategories:</label>
+                                                <div class="col-lg-6">
+                                                    <select id="ddlsubcategories" name="subcategories" class="form-control form-control-sm">
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+
+                                                <label class="col-lg-3 col-form-label">Minimum Stock:</label>
+                                                <div class="col-lg-6">
+                                                    <input type="text" id="txtminimumstock" name="minimumstock" class="form-control numerickey form-control-sm" placeholder="Enter Minimum Stock">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-3 col-form-label">Opening Stock:</label>
+                                                <div class="col-lg-6">
+                                                    <input type="text" id="txtopeningstock" name="openingstock" class="form-control numerickey form-control-sm" placeholder="Enter Opening Stock">
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="kt-portlet__foot">
+                                <div class="kt-form__actions">
+                                    <div class="text-center">
+                                        <div class="col-lg-12">
+                                            <input type="hidden" id="hf_id">
+                                            <button type="submit" class="btn btn-brand btn-sm">Save</button>
+                                            <button type="reset" onclick="productcleardata()" class="btn btn-secondary btn-sm">Clear</button>
+                                            <button type="reset" onclick="list()" class="btn btn-danger btn-sm">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <!--end::Form-->
+                    </div>
+                    <!-- </form> -->
+                </div>
+                <div class="kt-portlet list" style="margin-top:-20px">
+                    <div class="kt-portlet__head">
+                        <div class="kt-portlet__head-label">
+                            <h3 class="kt-portlet__head-title">
+                                Product List
+                            </h3>
+                        </div>
+                        <div class="kt-portlet__head-toolbar">
+                            <div class="kt-portlet__head-actions">
+                                <button type="button" class="btn btn-bold btn-success-grn btn-sm" style="margin-top:10px" onclick="show()"><i class="fa fa-plus-circle"></i> Add New</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <form class="kt-form kt-form--label-right"> -->
+                    <div class="kt-portlet__body">
+                        <table class="table text-center table-sm table-striped- table-bordered table-hover table-checkable" id="gvproductlist">
+                            <thead>
+                                <tr>
+                                    <th>Sno</th>
+                                    <th>Name</th>
+                                    <th>Item code</th>
+                                    <th>Type</th>
+                                    <th> Stock in hand</th>
+                                    <th>Action</th>
+
+
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                    <!--begin::Modal-->
+                    <!--end::Modal-->
+
+
+                </div>
+            </div>
+            <div class="tab-pane" id="kt_portlet_base_demo_1_2_tab_content" role="tabpanel">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="kt-portlet kt-portlet--tabs kt-portlet--height-fluid">
+                            <div class="kt-portlet__head">
+                                <div class="kt-portlet__head-label">
+                                    <h3 class="kt-portlet__head-title">
+                                        Category
+                                    </h3>
+                                </div>
+                            </div>
+                            <div class="kt-portlet__body">
+                                <!--Begin::Tab Content-->
+                                <form class="kt-form kt-form--label-right" id="kt_form_category">
+                                    <div class="form-group">
+                                        <label class="form-control-label">Category:</label>
+                                        <div class="input-group">
+                                            <input type="text" name="Category" placeholder="Enter Category Name" class="form-control form-control-md" id="txtcategory">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="form-group">
+                                            <label class="form-control-label">Description:</label>
+                                            <div class="input-group">
+                                                <input type="text" name="Category" placeholder="Enter Description Name" class="form-control form-control-md" id="txtdescription">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="kt-portlet__foot">
+                                        <div class="kt-form__actions">
+                                            <div class="text-center">
+                                                <div class="col-lg-12">
+                                                    <input type="hidden" id="hf_id">
+                                                    <button type="submit" class="btn btn-brand">Save</button>
+                                                    <button type="reset" onclick="category_cleardata()" class="btn btn-secondary">Clear</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </form>
+
+                                <!--End::Tab Content-->
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="kt-portlet kt-portlet--tabs kt-portlet--height-fluid">
+                            <div class="kt-portlet__head">
+                                <div class="kt-portlet__head-label">
+                                    <h3 class="kt-portlet__head-title">
+                                        Category List
+                                    </h3>
+                                </div>
+                            </div>
+                            <div class="kt-portlet__body">
+                                <!--Begin::Tab Content-->
+
+                                <table class="table text-center table-sm table-striped- table-bordered table-hover table-checkable auto-index" id="gvlist">
+                                    <thead>
+                                        <tr>
+                                            <th>S.NO</th>
+                                            <th>Category</th>
+                                            <th>Description</th>
+                                            <th></th>
+
+                                        </tr>
+                                    </thead>
+                                </table>
+                                <!--End::Tab Content-->
+                            </div>
+                            <!-- <div class="kt-portlet__foot">
+                                <div class="kt-form__actions">
+                                 
+                
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane" id="kt_portlet_base_demo_1_3_tab_content" role="tabpanel">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="kt-portlet kt-portlet--tabs kt-portlet--height-fluid">
+                            <div class="kt-portlet__head">
+                                <div class="kt-portlet__head-label">
+                                    <h3 class="kt-portlet__head-title">
+                                        SubCategory
+                                    </h3>
+                                </div>
+                            </div>
+                            <div class="kt-portlet__body">
+                                <!--Begin::Tab Content-->
+                                <form class="kt-form kt-form--label-right" id="kt_form_subcategory">
+                                    <div class="form-group">
+                                        <label class="form-control-label" id="lbcategorylist">Category:</label>
+                                        <div class="input-group">
+                                            <select class="form-control" id="ddlcategory">
+                                                <option value="0">select<option>    
+                                              </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-control-label">Sub category:</label>
+                                        <div class="input-group">
+                                            <input type="text" name="Category" placeholder="Enter Subcategory Name" class="form-control form-control-md" id="txtsubcategory">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="form-group">
+                                            <label class="form-control-label">Description:</label>
+                                            <div class="input-group">
+                                                <input type="text" placeholder="Enter Description Name" class="form-control form-control-md" id="txtdescription">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="kt-portlet__foot">
+                                        <div class="kt-form__actions">
+                                            <div class="text-center">
+                                                <div class="col-lg-12">
+                                                    <input type="hidden" id="hf_id">
+                                                    <button type="submit" class="btn btn-brand">Save</button>
+                                                    <button type="reset" onclick="subcatgory_cleardata()" class="btn btn-secondary">Clear</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </form>
+
+                                <!--End::Tab Content-->
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="kt-portlet kt-portlet--tabs kt-portlet--height-fluid">
+                            <div class="kt-portlet__head">
+                                <div class="kt-portlet__head-label">
+                                    <h3 class="kt-portlet__head-title">
+                                        SubCategory List
+                                    </h3>
+                                </div>
+                            </div>
+                            <div class="kt-portlet__body">
+                                <!--Begin::Tab Content-->
+
+                                <table class="table text-center table-sm table-striped- table-bordered table-hover table-checkable auto-index" id="gvsubcatgorylist">
+                                    <thead>
+                                        <tr>
+                                            <th>Sno</th>
+                                            <th>Category</th>
+                                            <th>SUbCategory</th>
+                                            <th>Description</th>
+                                            <th></th>
+
+                                        </tr>
+                                    </thead>
+                                </table>
+                                <!--End::Tab Content-->
+                            </div>
+                            <!-- <div class="kt-portlet__foot">
+                                <div class="kt-form__actions">
+                                 
+                
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane" id="kt_portlet_base_demo_1_4_tab_content" role="tabpanel">
+                <div class="kt-portlet" style="margin-top:-20px">
+                    <div class="kt-portlet__head">
+                        <div class="kt-portlet__head-label">
+                            <h3 class="kt-portlet__head-title">
+                                Attributes List
+                            </h3>
+                        </div>
+                        <div class="kt-portlet__head-toolbar">
+                            <div class="kt-portlet__head-actions">
+                                <button type="button" class="btn btn-bold btn-success-grn btn-sm" style="margin-top:10px" data-toggle="modal" data-target="#kt_modal_4"><i class="fa fa-plus-circle"></i> Add New</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <form class="kt-form kt-form--label-right"> -->
+                    <div class="kt-portlet__body">
+                        <table class="table text-center table-sm table-striped- table-bordered table-hover table-checkable" id="gvattributelist">
+                            <thead>
+                                <tr>
+                                    <th>Sno</th>
+                                    <th>Name</th>
+
+                                    <th>Type</th>
+
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                    <!--begin::Modal-->
+                    <div class="modal fade" id="kt_modal_4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Attributes Entry</h5>
+
+                                    <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    </button> -->
+                                </div>
+                                <div class="modal-body">
+                                    <!--begin::Form-->
+                                    <form class="kt-form kt-form--label-right" id="kt_form_4">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="form-group">
+                                                    <label for="txtemployeename" class="form-control-label">Name</label>
+                                                    <input type="text" name="attributename" class="form-control" id="txtattributename" placeholder="Enter Name">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="form-group">
+                                                    <label for="txtemployeename" class="form-control-label">Type</label>
+                                                    <select class="form-control" onchange="typebaseddropdownshow()" id="ddltype">
+                                                        <option value="text">text</option>
+                                                        <option value="Date">Date</option>
+                                                         <option value="Serial Number">Serial Number</option>
+                                                         <!-- <option value="DropDown">DropDown</option> -->
+                                                     </select>
+                                                </div>
+                                            </div>
+                                            <!-- <div class="col-lg-12 dropdownvalues">
+                                                <div class="form-group">
+                                                    <label for="txtemployeename" class="form-control-label">DropDown Values</label>
+                                                    <input id="kt_tagify_1" name="tags" placeholder="type..." autofocus="" data-blacklist=".NET,PHP">
+                                                </div>
+                                            </div> -->
+
+                                            <div class="col-lg-12">
+                                                <div class="form-group">
+                                                    <label for="txtemployeename" class="form-control-label">Category</label>
+                                                    <select class="form-control" id="ddlattributescategory">
+                                                       
+                                                     </select>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="kt-portlet__foot">
+                                            <div class="kt-form__actions">
+                                                <div class="text-center">
+                                                    <div class="col-lg-12">
+                                                        <input type="hidden" id="hf_id">
+                                                        <button type="submit" class="btn btn-brand btn-sm">Submit</button>
+                                                        <button type="reset" onclick="attributecleardata()" class="btn btn-secondary btn-sm">Cancel</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </form>
+                                    <!--end::Form-->
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!--end::Modal-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

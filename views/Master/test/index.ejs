@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <base href="">
+    <meta charset="utf-8" />
+    <title>Zerobugz | Bank</title>
+    <meta name="description" content="Latest updates and statistic charts">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="assets/css/pages/invoices/invoice-2.css" rel="stylesheet" type="text/css" />
+    <%include ../../templates/css/commoncss.ejs%>
+</head>
+
+<body
+    class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed kt-aside--minimize kt-page--loading">
+    <%include ../../templates/top.ejs%>
+    <!-- begin:: Content -->
+    <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid mt-4">
+
+        <%include ../../Master/test/test.ejs%>
+
+    </div>
+    <!-- end:: Content -->
+    <%include ../../templates/bottom.ejs%>
+    <%include ../../templates/js/commonjs.ejs%>
+    <script src="https://github.com/devongovett/pdfkit/releases/download/v0.6.2/pdfkit.js"></script>
+    <script src="https://github.com/devongovett/blob-stream/releases/download/v0.1.2/blob-stream-v0.1.2.js">
+    </script>
+    <script>
+
+        // function printData() {
+        //     import jsPDF from 'jspdf';
+        //     var doc = new jsPDF()
+
+        //     doc.text('Hello world!', 10, 10)
+        //     doc.save('a4.pdf')
+        //     // $("#printarea").show();
+        //     // window.print();
+        //     // var divContents = $("#printarea").html();
+        //     // var printWindow = window.open('', '', 'height=400,width=800');
+        //     // printWindow.document.write('<html><head><title>DIV Contents</title>');
+        //     // printWindow.document.write('</head><body >');
+        //     // printWindow.document.write(divContents);
+        //     // printWindow.document.write('</body></html>');
+        //     // printWindow.document.close();
+        //     // printWindow.print();
+        // }
+
+      
+
+
+function printData(){
+    var doc = new PDFDocument();
+        var stream = doc.pipe(blobStream());
+
+
+        doc
+            .fontSize(20)
+            .text('Invoice', 20, 20);
+
+        doc
+            .fontSize(15)
+            .text('Zerobugz', 420, 20);
+        doc
+            .fontSize(8)
+            .text('95, Nirmal Skywin Mall, Rajaji Road, Peramanur, Salem', {
+                width: 200,
+                align: 'left',
+                // indent: 30,
+                columns: 2,
+                height: 300,
+                ellipsis: true
+            });
+            doc.lineWidth(25)
+
+        // end and display the document in the iframe to the right
+        doc.end();
+
+
+        var saveData = (function () {
+            var a = document.createElement("a");
+            document.body.appendChild(a);
+            a.style = "display: none";
+            return function (blob, fileName) {
+                var url = window.URL.createObjectURL(blob);
+                a.href = url;
+                a.download = fileName;
+                a.click();
+                window.URL.revokeObjectURL(url);
+            };
+        }());
+        stream.on('finish', function () {
+            var blob = stream.toBlob('application/pdf');
+            saveData(blob, 'aa.pdf');
+            // iframe.src = stream.toBlobURL('application/pdf');
+        });
+    }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,217 @@
+<div class="row">
+    <div class="col-md-12">
+
+        <div class="kt-portlet kt-portlet--tabs kt-portlet--height-fluid">
+            <div class="kt-portlet__head">
+                <div class="kt-portlet__head-label">
+                    <h3 class="kt-portlet__head-title">
+                        Expense Details
+                    </h3>
+                </div>
+                <div class="kt-portlet__head-toolbar">
+                    <div class="kt-portlet__head-actions">
+                        <button type="button" class="btn btn-bold btn-success-grn btn-sm " style="margin-top: 10PX !important;" onclick="showlist()"><i class="fa fa-plus-circle"></i><span class="btnaddnew">Add New</span></button>
+                    </div>
+                </div>
+            </div>
+            <div class="kt-portlet__body">
+                <div class="list">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="kt-input-icon kt-input-icon--pill kt-input-icon--right">
+                                <input type="text" id="txtfdate" class="form-control form-control-pill kt_datepicker_1 dark-border" placeholder="From">
+                                <span class="kt-input-icon__icon kt-input-icon__icon--right"><span><i
+                                        class="la la-calendar-check-o"></i></span></span>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="kt-input-icon kt-input-icon--pill kt-input-icon--right">
+                                <input type="text" id="txttdate" class="form-control form-control-pill kt_datepicker_1 dark-border" placeholder="To">
+                                <span class="kt-input-icon__icon kt-input-icon__icon--right"><span><i
+                                        class="la la-calendar-check-o"></i></span></span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <button type="button" onclick="LoadData()" class="btn btn-pill btn-upper btn-bold btn-font-sm kt-subheader-search__submit-btn btn-primary">Search
+                                </button>
+                        </div>
+                    </div>
+                    <table class="table text-center table-sm table-striped- table-bordered table-hover table-checkable" id="gvlist">
+                        <thead>
+                            <tr>
+                                <!-- <th>sno</th> -->
+                                <th>Entry Date</th>
+                                <th>Payment Through</th>
+                                <th>Refrence</th>
+                                <th>Refrence Desc</th>
+                                <th>Total Amount</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+                <div class="entry">
+                    <form class="kt-form kt-form--label-right" id="kt_form_3">
+                        <!--Begin::Tab Content-->
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row ">
+                                    <div class="col-md-3 form-group">
+                                        <label>Entry date</label>
+                                        <input type="text" name="entrydate" id="kt_datepicker_1" autocomplete="off" class="form-control kt_datepicker_1 txtentrydate">
+                                    </div>
+                                    <div class="col-md-3 form-group">
+                                        <label>Paid from A/C</label>
+                                        <select class="form-control ddlpaymode">
+
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label>Reference</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <select class="form-control ddlrefrensemode">
+                                                    <option value="cash">Cash</option>
+                                                    <option value="chequedd">Cheque/DD</option>
+                                                    <option value="debit/creditcard">Debit/Credit Card</option>
+                                                    <option value="electronictransfer">Electronic Transfer</option>
+                                                    <option value="others">Others</option>
+                                                </select>
+                                                <input type="text" class="form-control txtrefrensedesc" aria-label="Text input with dropdown    ">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                <div class="float-right">
+                                    <h4>Total Amount : <span class="lbltotalamt"></span></h4>
+                                </div>
+                                <table id="gvdetail" class="table table-hover " style="margin-bottom: 0px !important;">
+                                    <thead>
+                                        <tr id="RowHead">
+                                            <th width="30%">ExpenseName</th>
+                                            <th>Expense Description</th>
+                                            <th width="15%">Amount</th>
+                                            <th>Delete</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="tblbody" style="max-height: 300px; overflow: auto;">
+                                        <!-- <tr class="form-group">
+                                        <td>
+                                            <input type="text" class="txtdate form-control form-control-sm 
+                                            kt_datepicker_1" onchange="addrow()" />
+                                        </td>
+                                        <td>
+                                            <select class="ddlexpanse form-control form-control-sm"></select>
+                                        </td>
+
+                                        <td>
+                                            <input type="text" name="" class="txtdate form-control form-control-sm">
+                                        </td>
+                                        <td>
+                                            <select class="ddlpaymode form-control form-control-sm"></select>
+                                        </td>
+                                        <td>
+                                            <input type="text" name="" class="txtdate form-control form-control-sm">
+                                        </td>
+                                        <td>
+                                            <input type="text" name="" class="txtdate form-control form-control-sm">
+                                        </td>
+                                        <td>
+                                            <button type="button" class="btn btn-icon btn-sm btn-danger">D</button>
+                                        </td>
+                                    </tr> -->
+                                    </tbody>
+                                    <!-- <tfoot >
+                                    <tr style="background-color: darkgrey;">
+                                        <td colspan="6">
+                                            <div class="pull-right">
+                                                <h5>Total Amount : 200</h5>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tfoot> -->
+                                </table>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3 form-group">
+                                <label>Description</label>
+                                <textarea class="form-control txtdescription" rows="5"></textarea>
+                            </div>
+                            <div class="col-md-3 form-group">
+                                <label>Upload files</label>
+                                <input type="file" id="uploadfile" />
+                            </div>
+                        </div>
+
+                        <div class="kt-portlet__foot">
+                            <div class="kt-form__actions">
+                                <div class="text-center">
+                                    <div class="col-lg-12">
+                                        <input type="hidden" id="hf_id">
+                                        <button type="submit" class="btn btn-brand">Save</button>
+                                        <button type="button" onclick="clearcontrol()" class="btn btn-secondary">Clear</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!--End::Tab Content-->
+        </div>
+        <div class="modal fade" id="expensemodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-sm" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Expense Entry</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!--begin::Form-->
+                        <form class="kt-form kt-form--label-right" id="expenseform">
+                            <div class="kt-portlet__body">
+                                <div class="kt-section">
+                                    <div class="kt-section__content">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label>Expense</label>
+                                                    <input type="text" name="expanse" placeholder="Enter Expense Name" class="form-control form-control-md" id="txtexpanse" style="border: solid grey 1px !important;">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label>Description</label>
+                                                    <input type="text" name="description" placeholder="Enter Description Name" class="form-control form-control-md" id="txtdescription" style="border: solid grey 1px !important;">
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="kt-portlet__foot">
+                                            <div class="kt-form__actions">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="float-right">
+                                                            <input type="hidden" id="hf_id">
+                                                            <button type="submit" class="btn btn-brand">Save</button>
+                                                            <button type="reset" onclick="cleardata()" class="btn btn-secondary">Clear</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                        </form>
+                        <!--end::Form-->
+                        </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>

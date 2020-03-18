@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <base href="">
+    <meta charset="utf-8" />
+    <title>Zerobugz | Expense</title>
+    <meta name="description" content="Latest updates and statistic charts">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <%include ../../templates/css/commoncss.ejs%>
+    <link rel="stylesheet" href="assets/css/custom_style.css" type="text/css">
+    <style>
+        option:empty{ display:none;}
+        .twitter-typeahead, .tt-hint, .tt-input, .tt-menu{ width: 100%; }
+        .tt-open {
+            padding: 5px !important;
+            background-color: #dcf4ff !important;
+        }
+        .table td {
+            background: #fff;
+            padding: 0rem !important;
+            vertical-align: middle !important; 
+            border: 1px solid #b4b4b4 !important;
+        }
+        th {
+            background: #e9e9e9 !important;
+            border: 0.05rem solid #b3b3b4 !important;
+        }
+        .form-control{
+            border: 1px solid rgba(34, 36, 38, 0);
+            border-radius: 0px;
+        }
+        .bootstrap-select > .dropdown-toggle.btn-light{
+            border-color: #e2e5ec00 !important;
+        }
+        .bg-white{
+            background-color: #fff !important;
+            background-clip: unset !important;
+        }
+        .tt-open > .tt-dataset > .tt-selectable{
+            border-bottom: 0.5px #ccc solid !important;
+            padding: 2px 0px 2px 0px !important;
+        }
+        .tt-open > .tt-dataset > .tt-selectable:last-child{
+            border-bottom: none !important;
+        }
+        
+        .tt-open > .tt-dataset > .tt-selectable:first-child{
+            border-bottom: 0.5px solid grey !important;
+        }
+        
+        
+            </style>
+</head>
+
+<body
+    class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed kt-aside--minimize kt-page--loading">
+    <%include ../../templates/top.ejs%>
+    <!-- begin:: Content -->
+    <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid mt-4">
+
+        <%include ../../Master/expansemain/expanse.ejs%>
+    </div>
+    <!-- end:: Content -->
+    <%include ../../templates/bottom.ejs%>
+    <%include ../../templates/js/commonjs.ejs%>
+    <script src="/pagescripts/Master/expansemain.js"></script>
+    <script src="/pagescripts/Master/expensemainmaster.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,136 @@
+<div class="kt-portlet">
+    <div class="kt-portlet__head">
+        <div class="kt-portlet__head-label">
+           <h3 class="kt-portlet__head-title">
+                User Details
+            </h3>
+        </div>
+        <div class="kt-portlet__head-toolbar">
+            <div class="kt-portlet__head-actions">
+                <button type="button" class="btn btn-outline-brand btn-bold btn-sm usermodel" data-toggle="modal"
+                    data-target="#kt_modal_4_2">Addnew</button>
+            </div>
+        </div>
+    </div>
+    <!-- <form class="kt-form kt-form--label-right"> -->
+    <div class="kt-portlet__body">
+
+        <table class="table text-center table-sm table-striped- table-bordered table-hover table-checkable" id="gvlist">
+            <thead>
+                <tr>
+                    <!-- <th>sno</th> -->
+                    <th>User Image</th>
+                    <th>name</th>
+                    <th>mobile</th>
+                    <th>email</th>
+                    <th>username</th>
+                    <th>password</th>
+                    <th>Role</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+        </table>
+
+    </div>
+    <!--begin::Modal-->
+
+
+    <!--end::Modal-->
+    <!-- </form> -->
+    <div class="modal fade" id="kt_modal_4_2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-xl" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">User Entry</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    </button>
+                </div>
+                <div class="modal-body">   
+                        <!--begin::Form-->
+                        <form class="kt-form kt-form--label-right" id="kt_form_3">
+                            <div class="kt-portlet__body">
+                            <div class="kt-section">
+                            <div class="kt-section__content">
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Name</label>
+                                                    <input type="text" id="txtname" name="name"
+                                                        class="form-control form-control-sm" placeholder=""
+                                                        value="">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Mobile</label>
+                                                    <input type="text" name="mobile" id="txtmobile"
+                                                        class="form-control form-control-sm">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label>Email</label>
+                                                    <input type="text" id="txtemail" name="email"
+                                                        class="form-control form-control-sm">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Username</label>
+                                                    <input type="text" name="username" id="txtusername"
+                                                        class="form-control form-control-sm">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Password</label>
+                                                    <input type="text" name="password" id="txtpassword"
+                                                        class="form-control form-control-sm">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Role</label>
+                                                    <select name="role" class="form-control form-control-sm"
+                                                     id="ddlrole">
+                                                        <option value="">select</option>                                                       
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 ">
+                                        <div class="form-group ">
+                                            <label class="control-label">User Image:</label><br />
+                                            <img src="/appfiles/CompanyImages/default.png" class=""
+                                                style="margin:10px;" height="150" width="150" id="showimg" />
+
+                                            <input type="file" id="imguserpic" accept="image/jpeg, image/png"
+                                                onchange="ShowimgPreview(this, document.getElementById('showimg'))" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="kt-portlet__foot">
+                                <div class="kt-form__actions">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="float-right">
+                                                <input type="hidden" id="hf_id">
+                                                <button type="submit" class="btn btn-brand">Save</button>
+                                                <button type="reset" onclick="cleardata()" class="btn btn-secondary">Clear</button>
+                                            </div>                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <!--end::Form-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

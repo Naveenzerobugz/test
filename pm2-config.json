@@ -1,0 +1,9 @@
+{
+    "apps" : [
+        {
+            "name"        : "ZIMS",
+            "script"      : "app.js",
+            "watch"       : true
+        }
+    ]
+}

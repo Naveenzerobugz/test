@@ -1,0 +1,202 @@
+<form class="kt-form kt-form--label-right" id="kt_form_3">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="kt-portlet kt-portlet--solid-forms">
+                <div class="kt-portlet kt-portlet--tabs">
+                    <div class="kt-portlet__head">
+                        <div class="kt-portlet__head-label">
+                            <h3 class="kt-portlet__head-title">
+                                Genaral Info
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="kt-portlet__body form-group">
+                        <div class="form-group">
+                            <label>Name <span class="text-danger">*</span></label>
+                            <input type="text" id="txtname" name="name" class="form-control form-control-sm">
+                        </div>
+                        <div class="form-group">
+                            <label>Mobile <span class="text-danger">*</span></label>
+                            <input type="text" name="mobile" id="txtmobile" class="form-control numerickey form-control-sm">
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Opening Balance <i class="flaticon-info" data-toggle="kt-popover"
+                                            title="Discount" data-content="This is for Customer discount"></i></label>
+                                    <input type="text" id="txtopeningbal" value="0.00" class="form-control form-control-sm">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Payment Terms</label>
+                                    <select name="" class="form-control form-control-sm" id="ddlpaymentterms"></select>
+                                </div>
+                            </div>
+                            <div class="col-md-12 customertype">
+                                <div class="form-group">
+                                    <label>Customer Type</label>
+                                    <select onchange="focusaftertab('customertype')" class="form-control form-control-sm" id="ddlcustomertype"></select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="kt-portlet">
+                <!--begin::Portlet-->
+                <div class="kt-portlet kt-portlet--tabs">
+                    <div class="kt-portlet__head">
+                        <div class="kt-portlet__head-label">
+                            <h3 class="kt-portlet__head-title">
+                                Other Details
+                            </h3>
+                        </div>
+                        <div class="kt-portlet__head-toolbar">
+                            <ul class="nav nav-tabs nav-tabs-line nav-tabs-line-right" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" onclick="focusaftertab('customertype')" data-toggle="tab" href="#kt_portlet_base_demo_1_tab_content" role="tab">
+                                        <i class="flaticon-home-2"></i> Company Info
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" onclick="focusaftertab('addrestype')" data-toggle="tab" href="#kt_portlet_base_demo_2_tab_content" role="tab">
+                                        <i class="flaticon-bus-stop"></i> Address Info
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="kt-portlet__body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="kt_portlet_base_demo_1_tab_content" role="tabpanel">
+                                        <div class="row form-group">
+                                            <div class="col-md-6">
+                                                <label for="">Company Name</label>
+                                                <input type="text" name="" id="txtcompany" class="form-control form-control-sm">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="">Email</label>
+                                                <input type="text" name="" id="txtemail" class="form-control form-control-sm">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="">others</label>
+                                                <input type="text" name="" id="txtothers" class="form-control form-control-sm">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="">Description</label>
+                                                <input type="text" name="" id="txtdescription" class="form-control form-control-sm">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-5"></div>
+                                            <div class="form-group">
+                                                <label class="col-3 col-form-label">GST</label>
+                                                <div class="col-3">
+                                                    <span class="kt-switch kt-switch--sm kt-switch--icon">
+                                                        <label>
+                                                            <input type="checkbox" onchange="fngst()" id='cbgst'
+                                                                name="cbgst">
+                                                            <span></span>
+                                                    </label>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row gst form-group">
+                                            <div class="col-md-4">
+                                                <label>GST Type</label>
+                                                <select name="" class="form-control form-control-sm" id="ddlgsttype"></select>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label>GSTIN <i class="flaticon-info" data-toggle="kt-popover"
+                                                        data-placement="top"
+                                                        data-content="15-digit Goods and Services Tax Identification Number assigned to every GST registered client or supplier"></i></label>
+                                                <input type="text" id="txtgstin" class="form-control form-control-sm">
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label>Pan No<i class="flaticon-info" data-toggle="kt-popover"
+                                                        data-placement="top"
+                                                        data-content="Permanent account number(10-digit) issued by income tax department to an client or supplier"></i></label>
+                                                <input type="text" id="txtpanno" class="form-control form-control-sm">
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="tab-pane" id="kt_portlet_base_demo_2_tab_content" role="tabpanel">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Billing Address </label>
+                                                    <textarea id='txtbillingaddress' rows="6" class="form-control form-control-sm"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Billing State </label>
+                                                    <select name="" id="ddlbillingstate" class="form-control form-control-sm"></select>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Billing Pincode </label>
+                                                    <input type="text" class="form-control form-control-sm" id="txtbillingpincode">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <label class="kt-checkbox kt-checkbox--solid kt-checkbox--success">
+                                                    <input type="checkbox" id="cbshipping" onclick="fnshipping()"> Same
+                                                    as Shipping address
+                                                    <span></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="row shipping">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Shipping Address </label>
+                                                    <textarea id='txtshippingaddress' rows="6" class="form-control form-control-sm disable"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Shipping State </label>
+                                                    <select name="" id="ddshipingstate" class="form-control form-control-sm disable"></select>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Shipping Pincode </label>
+                                                    <input type="text" name="" id="txtshippingpincode" class="form-control form-control-sm disable">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 text-center">
+                                <input type="hidden" id="hf_id">
+                                <div class="btn-group" role="group">
+                                    <button id="btnGroupDrop1" type="button" class="btn btn-brand dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Save
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                                        <button type="button" onclick="save('savenew')" id="btnsavenew" class="btn btn-brand dropdown-item">Save New</button>
+                                        <button type="button" onclick="save('save')" id="btnsave" class="btn btn-brand dropdown-item">Save</button>
+                                    </div>
+                                </div>
+                                <button type="button" onclick="clearcntrols()" class="btn btn-secondary">Clear</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!--end::Portlet-->
+            </div>
+        </div>
+    </div>
+</form>

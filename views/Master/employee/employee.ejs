@@ -1,0 +1,147 @@
+<div class="kt-portlet">
+    <div class="kt-portlet__head">
+        <div class="kt-portlet__head-label">
+            <h3 class="kt-portlet__head-title">
+                Employee List
+            </h3>
+        </div>
+        <div class="kt-portlet__head-toolbar">
+            <div class="kt-portlet__head-actions">
+                <button type="button" class="btn btn-bold btn-success-grn btn-sm" onclick="show()"><i class="fa fa-plus-circle"></i> Add New</button>
+            </div>
+        </div>
+    </div>
+    <!-- <form class="kt-form kt-form--label-right"> -->
+    <div class="kt-portlet__body">
+        <table class="table text-center table-sm table-striped- table-bordered table-hover table-checkable" id="gvlist">
+            <thead>
+                <tr>
+
+                    <th>Sno</th>
+                    <th>Name</th>
+                    <th>Department</th>
+                    <th>Salary</th>
+                    <th>Description</th>
+                    <th></th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    <!--begin::Modal-->
+    <!--end::Modal-->
+    <!-- </form> -->
+    <div class="modal fade" id="kt_modal_4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+        <div class="modal-dialog modal-lg" role="document" style="width: 70%;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Employee Entry</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!--begin::Form-->
+                    <form class="kt-form kt-form--label-right" id="kt_form_3">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="form-group">
+                                    <label for="txtemployeename" class="form-control-label">Name</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend"><span class="input-group-text"><i
+                                            class="fa fa-address-book"></i></span></div>
+                                        <input type="text" autocomplete="off" placeholder="Enter Name" class="form-control form-control-sm" name="employeename" id="txtemployeename">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="form-group">
+                                    <label for="txtdeptid" class="form-control-label">Department</label>
+                                    <select id="ddldepartment" name="department" class="form-control form-control-sm">
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="form-group">
+                                    <label for="txtsalary" class="form-control-label">Salary</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend"><span class="input-group-text"><i
+                                            class="fa fa-rupee-sign"></i></span></div>
+                                        <input type="text" name="salary" placeholder="Enter Salary" class="form-control form-control-sm" id="txtsalary">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="accordion accordion-solid accordion-toggle-plus" id="accordionExample6">
+
+                            <div class="card">
+                                <div class="card-header" id="headingTwo6">
+                                    <div class="card-title collapsed" data-toggle="collapse" data-target="#collapseTwo6" aria-expanded="false" aria-controls="collapseTwo6" style="padding:4px;">
+                                        <i class="flaticon2-notification"></i> Other Details
+                                    </div>
+                                </div>
+                                <div id="collapseTwo6" class="collapse" aria-labelledby="headingTwo6" data-parent="#accordionExample6">
+                                    <div class="card-body" style="padding: 10px;">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <div class="form-group">
+                                                    <label for="txtdoj" class="form-control-label">Date Of Join:</label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend"><span class="input-group-text"><i
+                                                    class=" fa fa-calendar-alt"></i></span></div>
+                                                        <input type="text" placeholder="dd-mm-yyyy" autocomplete="off" class="form-control form-control-sm kt_datepicker_1" id="txtdoj">
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="form-group">
+                                                    <label for="txtincentive" class="form-control-label">Incentive:</label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend"><span class="input-group-text"><i
+                                                        class="fa fa-rupee-sign"></i></span></div>
+                                                        <input type="text" autocomplete="off" placeholder="Enter Incentive" class="form-control form-control-sm" id="txtincentive">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-lg-4">
+                                                <div class="form-group">
+                                                    <label for="txtothers" class="form-control-label">Others:</label>
+                                                    <input type="text" autocomplete="off" placeholder="Enter Others" class="form-control form-control-sm" id="txtothers">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="form-group">
+                                                    <label for="txtdescription" class="form-control-label">Description:</label>
+                                                    <input type="text" placeholder="Enter Description" autocomplete="off" class="form-control form-control-sm" id="txtdescription">
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="kt-portlet__foot">
+                            <div class="kt-form__actions">
+                                <div class="text-center">
+                                    <div class="col-lg-12">
+                                        <input type="hidden" id="hf_id">
+                                        <button type="submit" class="btn btn-brand btn-sm">Save</button>
+                                        <button type="reset" onclick="cleardata()" class="btn btn-secondary btn-sm">Clear</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+                    <!--end::Form-->
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>

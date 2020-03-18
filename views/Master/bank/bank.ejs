@@ -1,0 +1,166 @@
+<div class="kt-portlet">
+    <div class="kt-portlet__head">
+        <div class="kt-portlet__head-label">
+            <h3 class="kt-portlet__head-title">
+                Bank List
+            </h3>
+        </div>
+        <div class="kt-portlet__head-toolbar">
+            <div class="kt-portlet__head-actions">
+                <button type="button" class="btn btn-bold btn-success-grn btn-sm" onclick="show()"
+                   ><i class="fa fa-plus-circle"></i> Add New</button>
+            </div>
+        </div>
+    </div>
+    <!-- <form class="kt-form kt-form--label-right"> -->
+    <div class="kt-portlet__body">
+        <table class="table text-center table-sm table-striped- table-bordered table-hover table-checkable" id="gvlist">
+            <thead>
+                <tr>
+                    <th>S.NO</th>
+                    <th>Bank Name</th>
+                    <th>Branch Name</th>
+                    <th>IFCS Code</th>
+                    <th>Account No</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    <!--begin::Modal-->
+    <!--end::Modal-->
+    <!-- </form> -->
+    <div class="modal fade" id="kt_modal_4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+
+        <div class="modal-dialog" role="document">
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Bank Entry</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!--begin::Form-->
+                    <form class="kt-form kt-form--label-right" id="kt_form_3">
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label class="form-control-label">Bank Name:</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend"><span class="input-group-text"><i
+                                                    class="fa fa-university"></i></span></div>
+                                        <input type="text" tabindex="0" name="BankName" placeholder="Enter Bank Name"
+                                            class="form-control form-control-sm" id="txtbankname"  autofocus>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <div class="form-group">
+
+                                    <label class="form-control-label">Branch Name:</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend"><span class="input-group-text"><i
+                                                    class="fa fa-door-open"></i></span></div>
+                                        <input type="text" name="BranchName" placeholder="Enter Branch Name"
+                                            class="form-control form-control-sm" id="txtbranchname">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+
+
+                                    <label class="form-control-label">Account No:</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend"><span class="input-group-text"><i
+                                                    class="fab fa-angular"></i></span></div>
+                                        <input type="text" name="AccountNo" placeholder="Enter Account No "
+                                            class="form-control numerickey form-control-sm" id="txtaccountno">
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label class="form-control-label">IFSC Code:</label>
+                                    <input type="text" name="IFSCCode" placeholder="Enter IFSC Code"
+                                        class="form-control form-control-sm" id="txtifcscode">
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row">
+
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label class="form-control-label">Opening Balance:</label>
+                                    <div class="input-group">
+
+                                        <div class="input-group-prepend"><span class="input-group-text"><i
+                                                    class="  fa fa-rupee-sign"></i></span></div>
+                                        <input type="text" placeholder="Enter Opening Balance  "
+                                            class="form-control decimal form-control-sm" id="txtopeningbalance">
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="txtAddress" class="form-control-label">Account type:</label>
+                                    <select id="ddlaccounttype" class="form-control form-control-sm">
+                                        <option value="Current">Current</option>
+                                        <option value="Savings">Savings</option>
+                                        <option value="OD">OD</option>
+                                        <option value="CC">CC</option>
+                                        <option value="Credit">Credit</option>
+                                        <option value="Others">Others</option>
+                                    </select>
+
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label class="form-control-label">Description:</label>
+                                    <input type="text" placeholder="Enter Description "
+                                        class="form-control form-control-sm" id="txtdescription">
+                                </div>
+                            </div>
+                          
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="txtAddress" class="form-control-label">Address:</label>
+                                    <textarea class="form-control" placeholder="Enter Address"
+                                        id="txtaddress"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="kt-portlet__foot">
+                            <div class="kt-form__actions">
+                                <div class="text-center">
+                                    <div class="col-lg-12">
+                                        <input type="hidden" id="hf_id">
+                                        <button type="submit" class="btn btn-brand">Save</button>
+                                        <button type="reset" onclick="cleardata()"
+                                            class="btn btn-secondary">Clear</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <!--end::Form-->
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+</div>

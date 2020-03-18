@@ -1,0 +1,205 @@
+<div class="row list">
+    <div class="col-lg-12">
+        <div class="kt-portlet">
+            <div class="kt-portlet__head">
+                <div class="kt-portlet__head-label">
+                    <h3 class="kt-portlet__head-title">
+                        Receipt List
+                    </h3>
+                </div>
+                <div class="kt-portlet__head-toolbar">
+                    <div class="kt-portlet__head-actions">
+                        <button type="button" class="btn btn-bold btn-success-grn btn-sm" data-toggle="modal" data-target="#kt_modal_4" onclick="Show()"><i class="fa fa-plus-circle"></i> Add New</button>
+                    </div>
+                </div>
+            </div>
+            <div class="cust-tab kt-portlet__body">
+                <table class="table text-center table-sm table-striped- table-bordered table-hover table-checkable" id="gvreceiptlist">
+                    <thead>
+                        <tr>
+                            <th style="border-left: 0.03rem solid #b3b3b4 !important;border-bottom: 0.05rem solid #b3b3b4 !important;border-top: 0.05rem solid #b3b3b4 !important;">
+
+                                Receipt Date</th>
+                            <th>Receipt No</th>
+
+                            Receipt Date</th>
+                            <th>Receipt No</th>
+
+                            <th>Customer</th>
+                            <th>Payment through</th>
+                            <th>Mode</th>
+                            <th>Paid Amount</th>
+
+
+
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="row entry">
+    <div class="col-lg-12">
+        <!--begin::Portlet-->
+        <div class="kt-portlet kt-portlet--last kt-portlet--head-lg kt-portlet--responsive-mobile" id="kt_page_portlet">
+            <div class="kt-portlet__head kt-portlet__head--lg">
+                <div class="kt-portlet__head-label">
+                    <h3 class="kt-portlet__head-title">Receipt Entry </h3>
+                </div>
+                <div class="kt-portlet__head-toolbar">
+                    <a href="#" onclick="Close()" class="btn btn-danger kt-margin-r-10">
+                        <i class="la la-arrow-left"></i>
+                        <span class="kt-hidden-mobile">Back</span>
+                    </a>
+                    <div class="btn-group">
+                        <button type="button" onclick="save_process()" class="btn btn-brand">
+                            <i class="la la-save"></i>
+                            <span class="kt-hidden-mobile">Save</span>
+                        </button>
+                        <button type="button" class="btn btn-brand dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <ul class="kt-nav">
+                                <li class="kt-nav__item">
+                                    <a href="#" onclick="saveexit()" class="kt-nav__link">
+                                        <i class="kt-nav__link-icon flaticon2-edit-interface-symbol-of-pencil-tool"></i>
+                                        <span class="kt-nav__link-text">Save & exit</span>
+                                    </a>
+                                </li>
+                                <li class="kt-nav__item">
+                                    <a href="#" onclick="save_process()" class="kt-nav__link">
+                                        <i class="kt-nav__link-icon flaticon2-add-1"></i>
+                                        <span class="kt-nav__link-text">Save & add new</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="kt-portlet__body">
+                <form class="kt-form" id="kt_form">
+                    <div class="row ">
+                        <div class="col-md-2">
+                            <label class="control-label">Receipt No</label><br>
+                            <div class="kt-input-icon">
+                                <h3 class="kt-callout__title  kt-font-primary kt-font-bold">
+                                    <lable id="lblreceiptno"></lable>
+                                </h3>
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-3">
+                            <label class="control-label">Receipt Date</label>
+                            <div class="kt-input-icon">
+                                <input type="text" id="txtreceiptdate" class="form-control kt_datepicker_1 dark-border" placeholder="DD-MM-YYYY">
+                                <span class="kt-input-icon__icon kt-input-icon__icon--right"><span><i
+                                            class="flaticon2-calendar"></i></span></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="col-form-label" style="margin-top: -7%;">Customer</label>
+                            <div class="col-lg-12 col-md-9 col-sm-12" style="margin-left: -10px;">
+                                <div class="typehead">
+                                    <input class="form-control dark-border bg-white" id="txtcustomer" type="text" dir="ltr" placeholder="Enter CustomerName">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label>Paid from A/C</label>
+                            <select class="form-control ddlpaymode paidfrom">
+                            </select>
+
+                        </div>
+                        <div class="col-md-4">
+                            <label>Reference</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <select class="form-control referncemode">
+                                        <option value="Cash">Cash</option>
+                                        <option value="Cheque/DD"> Cheque/DD</option>
+                                        <option value="Debit/Credit Card">Debit/Credit Card</option>
+                                        <option value="Electronic Transfer">Electronic Transfer</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
+                                <input type="text" class="form-control" id="txtreference" placeholder="Enter Reference">
+                            </div>
+                            <!-- <div class="input-group">
+                                
+                                <select class="btn btn-primary dropdown-toggle ddlreference">
+                                    <option>Cash</option>
+                                    <option>Cheque/DD</option>
+                                    <option>Debit/Credit Card</option>
+                                    <option>Electronic Transfer</option>
+                                    <option>Other</option>
+                                </select>
+                                <input type="textbox" class="form-control">
+                            </div>
+                            -->
+
+                        </div>
+                        <div class="col-md-3">
+                            <label>Amount Paid</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend"><span class="input-group-text"><i
+                                            class="la la-rupee"></i></span></div>
+                                <input type="text" class="form-control" onblur="Closing_Purchase()" id="txtpaidamount" placeholder="Enter Paid amount">
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <br>
+                    <div class="transactiondetails  table-responsive col-md-8">
+                        <table class="table" id="paymentdetails">
+                            <thead>
+                                <tr>
+                                    <th>Sno</th>
+                                    <th></th>
+                                    <th>Date</th>
+                                    <th>Transaction description</th>
+                                    <th>payment</th>
+                                    <th>Balance</th>
+                                </tr>
+                            </thead>
+                            <tbody class="trbody">
+
+                            </tbody>
+                        </table>
+                    </div>
+
+
+
+                    <hr>
+                    </hr>
+                    <div class="row">
+                        <div class="col-lg-4">
+
+                            <label class="form-control-label">Note:</label>
+                            <textarea rows="4" class="form-control"></textarea>
+
+                        </div>
+                        <div class="col-lg-4"></div>
+
+
+                    </div>
+
+                    <input type="hidden" id="hfcustomerid">
+
+            </div>
+            </form>
+        </div>
+    </div>
+    <!--end::Portlet-->
+</div>

@@ -1,0 +1,13 @@
+Zims Instalation process 
+  1. create directroy project name
+  2. use npm init to create packege.json file
+  3. npm install express body-parser mongoose --save
+      install common frameworks
+Apllication folder
+  node-easy-notes-app
+      └── node_modules/
+      └── package.json
+thme preparation 
+using ejs install componets 
+npm i ejs
+npm i ejs-locals

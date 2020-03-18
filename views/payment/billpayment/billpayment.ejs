@@ -1,0 +1,413 @@
+<div class="row list">
+    <div class="col-lg-12">
+        <div class="kt-portlet">
+            <div class="kt-portlet__head">
+                <div class="kt-portlet__head-label">
+                    <h3 class="kt-portlet__head-title">
+                        BillPayment List
+                    </h3>
+                </div>
+                <div class="kt-portlet__head-toolbar">
+                    <div class="kt-portlet__head-actions">
+                        <button type="button" class="btn btn-bold btn-success-grn btn-sm" onclick="Show()"><i
+                                class="fa fa-plus-circle"></i> Add New</button>
+                    </div>
+                </div>
+            </div>
+            <div class="cust-tab kt-portlet__body">
+                <table class="table text-center table-sm table-striped- table-bordered table-hover table-checkable"
+                    id="gvbillpayemntlist">
+                    <thead>
+                        <tr>
+                            <th
+                                style="border-left: 0.03rem solid #b3b3b4 !important;border-bottom: 0.05rem solid #b3b3b4 !important;border-top: 0.05rem solid #b3b3b4 !important;">
+                                Bill date</th>
+                            <th>Bill No</th>
+                            <th>Supplier</th>
+                            <th>Payment through</th>
+                            <th>Mode</th>
+                            <th>Paid Amount</th>
+
+
+
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="row entry">
+    <div class="col-lg-12">
+        <!--begin::Portlet-->
+        <div class="kt-portlet kt-portlet--last kt-portlet--head-lg kt-portlet--responsive-mobile" id="kt_page_portlet">
+            <div class="kt-portlet__head kt-portlet__head--lg">
+                <div class="kt-portlet__head-label">
+                    <h3 class="kt-portlet__head-title">Balance Payment Entry </h3>
+                </div>
+                <div class="kt-portlet__head-toolbar">
+                    <a href="#" onclick="Close()" class="btn btn-danger kt-margin-r-10">
+                        <i class="la la-arrow-left"></i>
+                        <span class="kt-hidden-mobile">Back</span>
+                    </a>
+                    <div class="btn-group">
+                        <button type="button" onclick="save_process()" class="btn btn-brand">
+                            <i class="la la-save"></i>
+                            <span class="kt-hidden-mobile">Save</span>
+                        </button>
+                        <button type="button" class="btn btn-brand dropdown-toggle dropdown-toggle-split"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <ul class="kt-nav">
+                                <li class="kt-nav__item">
+                                    <a href="#" onclick="saveexit()" class="kt-nav__link">
+                                        <i class="kt-nav__link-icon flaticon2-edit-interface-symbol-of-pencil-tool"></i>
+                                        <span class="kt-nav__link-text">Save & exit</span>
+                                    </a>
+                                </li>
+                                <li class="kt-nav__item">
+                                    <a href="#" onclick="save_process()" class="kt-nav__link">
+                                        <i class="kt-nav__link-icon flaticon2-add-1"></i>
+                                        <span class="kt-nav__link-text">Save & add new</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="kt-portlet__body">
+                <form class="kt-form" id="kt_form">
+                    <div class="row ">
+                        <div class="col-md-2">
+                            <label class="control-label">Billpayment No</label><br>
+                            <div class="kt-input-icon">
+                                <h3 class="kt-callout__title lblinvoiceno kt-font-primary kt-font-bold">
+                                    <lable id="lblbillpaymentno"></lable>
+                                </h3>
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-3">
+                            <label class="control-label">Billpayment Date</label>
+                            <div class="kt-input-icon">
+                                <input type="text" id="txtpymentdate" class="form-control kt_datepicker_1 dark-border"
+                                    placeholder="DD-MM-YYYY">
+                                <span class="kt-input-icon__icon kt-input-icon__icon--right"><span><i
+                                            class="flaticon2-calendar"></i></span></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="col-form-label" style="margin-top: -7%;">Supplier</label>
+                            <div class="col-lg-12 col-md-9 col-sm-12" style="margin-left: -10px;">
+                                <div class="typehead">
+                                    <input class="form-control dark-border bg-white" id="txtsupplier" type="text"
+                                        dir="ltr" placeholder="Enter suppliername">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label>Paid from A/C</label>
+                            <select class="form-control ddlpaymode paidfrom">
+                            </select>
+
+                        </div>
+                        <div class="col-md-4">
+                            <label>Reference</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <select class="form-control referncemode">
+                                        <option value="Cash"> Cash</option>
+                                        <option value="Cheque/DD"> Cheque/DD</option>
+                                        <option value="Debit/Credit Card">Debit/Credit Card</option>
+                                        <option value="Electronic Transfer">Electronic Transfer</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
+                                <input type="text" class="form-control" id="txtreference" placeholder="Enter Reference">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Amount Paid</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend"><span class="input-group-text"><i
+                                            class="la la-rupee"></i></span></div>
+                                <input type="text" class="form-control" onblur="Closing_Purchase()" id="txtpaidamount"
+                                    placeholder="Enter Paid amount">
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <br>
+                    <div class="transactiondetails  table-responsive col-md-8">
+                        <table class="table" id="paymentdetails">
+                            <thead>
+                                <tr>
+                                    <th>Sno</th>
+                                    <th></th>
+                                    <th>Date</th>
+                                    <th>Transaction description</th>
+                                    <th>payment</th>
+                                    <th>Balance</th>
+                                </tr>
+                            </thead>
+                            <tbody class="trbody">
+
+                            </tbody>
+                        </table>
+                    </div>
+
+
+
+                    <hr>
+                    </hr>
+
+
+                    <input type="hidden" id="hfsupplierid">
+                    <input type="hidden" id="hf_id">
+            </div>
+            </form>
+        </div>
+    </div>
+    <!--end::Portlet-->
+</div>
+<div class="modal fade" id="kt_modal_4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+
+    <div class="modal-dialog" role="document">
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Reason To Delete</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                </button>
+            </div>
+            <div class="modal-body">
+                <!--begin::Form-->
+               
+
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label class="kt-font-primary kt-font-bold">Bill No:</label><br>
+
+                            <label id="lblbillno" class="form-control-label"></label>
+                          
+
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label class="kt-font-primary kt-font-bold">Supplier Name:</label><br>
+
+                            <label id="lblsuppliertext" class="form-control-label"></label>
+                          
+
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="form-group">
+                            <label class="kt-font-primary kt-font-bold">Paid Amount:</label><br>
+
+                            <i class="la la-rupee"></i><label id="lblpaidamount" class="form-control-label"></label>
+                          
+
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label class="kt-font-primary kt-font-bold">Note:</label>
+
+
+                            <textarea class="form-control" id="txtnote" 
+                                placeholder="Enter a reason to delete" rows="5"></textarea>
+
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+                <div class="kt-portlet__foot">
+
+                    <div class="text-center">
+                        <div class="col-lg-12">
+                            <input type="hidden" id="hf_billno">
+                            <button type="button" onclick="savenote()" class="btn btn-brand">Save</button>
+                            <button type="reset" onclick="cleardata()" class="btn btn-secondary">Clear</button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!--end::Form-->
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="previewdetails" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+
+    <div class="modal-dialog modal-xxl" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Deleted Bill Details</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                </button>
+            </div>
+            <div class="modal-body">
+                <!--begin::Form-->
+                <div class="row ">
+                    <div class="col-md-2">
+                        <label class="control-label">Billpayment No</label><br>
+                        <div class="kt-input-icon">
+                            <h3 class="kt-callout__title lblinvoiceno kt-font-primary kt-font-bold">
+                                <lable id="lbl_preview_billpaymentno"></lable>
+                            </h3>
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-3">
+                        <label class="control-label">Billpayment Date</label>
+                        <div class="kt-input-icon">
+                            <input type="text" id="txt_preview_pymentdate" disabled="disabled"
+                                style="background-color: #fff;" class="form-control kt_datepicker_1 dark-border"
+                                placeholder="DD-MM-YYYY">
+                            <span class="kt-input-icon__icon kt-input-icon__icon--right"><span><i
+                                        class="flaticon2-calendar"></i></span></span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="col-form-label" style="margin-top: -7%;">Supplier</label>
+                        <div class="col-lg-12 col-md-9 col-sm-12" style="margin-left: -10px;">
+                            <div class="typehead">
+                                <input class="form-control dark-border bg-white" disabled="disabled"
+                                    style="background-color: #fff;" id="txt_preview_supplier" type="text" dir="ltr"
+                                    placeholder="Enter suppliername">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="row">
+                    <div class="col-md-3">
+                        <label>Paid from A/C</label>
+                        <select disabled="disabled" style="background-color: #fff;"
+                            class="form-control ddl_preview_paymode paidfrom">
+                        </select>
+
+                    </div>
+                    <div class="col-md-4">
+                        <label>Reference</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <select disabled="disabled" style="background-color: #fff;"
+                                    class="form-control preview_referncemode">
+                                    <option value="Cash">Cash</option>
+                                    <option value="Cheque/DD"> Cheque/DD</option>
+                                    <option value="Debit/Credit Card">Debit/Credit Card</option>
+                                    <option value="Electronic Transfer">Electronic Transfer</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                            <input type="text" class="form-control" disabled="disabled" style="background-color: #fff;"
+                                id="txt_preview_reference" placeholder="Enter Reference">
+                        </div>
+
+
+                    </div>
+                    <div class="col-md-3">
+                        <label>Amount Paid</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend"><span class="input-group-text"><i
+                                        class="la la-rupee"></i></span></div>
+                            <input type="text" class="form-control" disabled="disabled" style="background-color: #fff;"
+                                onblur="Closing_Purchase()" id="txt_preview_paidamount" placeholder="Enter Paid amount">
+
+                        </div>
+
+                    </div>
+                </div>
+                <br>
+                <div class="table-responsive col-md-8">
+                    <table class="table" id="preview_paymentdetails">
+                        <thead>
+                            <tr>
+                                <th>Sno</th>
+                                <th></th>
+                                <th>Date</th>
+                                <th>Transaction description</th>
+                                <th>payment</th>
+                                <th>Balance</th>
+                            </tr>
+                        </thead>
+                        <tbody class="trbody">
+
+                        </tbody>
+                    </table>
+                </div>
+
+
+
+                <hr>
+                </hr>
+
+
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="form-group">
+                            <label class="kt-font-danger kt-font-bold">Deleted By:</label>
+
+
+                            <input type="text" id="txt_previewname" disabled="disabled" style="background-color: #fff;"
+                                class="form-control">
+
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="form-group">
+                            <label class="kt-font-danger kt-font-bold">Deleted Date:</label>
+                            <input type="text" id="txt_previewdate" disabled="disabled" style="background-color: #fff;"
+                                class="form-control">
+
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label class="kt-font-danger kt-font-bold">Note:</label>
+
+
+                            <textarea class="form-control" disabled="disabled" style="background-color: #fff;"
+                                id="txt_previewnote" name="memo" placeholder="Enter a reason to delete"
+                                rows="5"></textarea>
+
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+
+
+                <!--end::Form-->
+            </div>
+
+        </div>
+    </div>
+</div>
